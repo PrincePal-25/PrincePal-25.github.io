@@ -1,1 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prince Pal | Portfolio</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --text: #e6edf3;
+      --card: #161b22;
+      --accent: #58a6ff;
+      --muted: #8b949e;
+    }
+    body.light {
+      --bg: #f5f5f5;
+      --text: #222;
+      --card: #fff;
+      --accent: #007acc;
+      --muted: #666;
+    }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      transition: background 0.3s, color 0.3s;
+    }
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: var(--card);
+      box-shadow: 0 2px 6px rgba(0,0,0,.3);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      color: var(--accent);
+      animation: fadeInDown 1s ease;
+    }
+    header p {
+      margin-top: .5rem;
+      font-size: 1.2rem;
+      color: var(--muted);
+      animation: fadeInUp 1s ease;
+    }
+    section {
+      padding: 2rem 10%;
+    }
+    h2 {
+      color: var(--accent);
+      border-bottom: 2px solid var(--muted);
+      padding-bottom: .5rem;
+      margin-bottom: 1rem;
+    }
+    .grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+    .card {
+      background: var(--card);
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,.3);
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .toggle-btn {
+      position: fixed;
+      top: 15px;
+      right: 20px;
+      background: var(--accent);
+      border: none;
+      color: white;
+      padding: 8px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .toggle-btn:hover {
+      background: #006bb3;
+    }
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: var(--card);
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 2rem;
+    }
+    /* Animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
 
+  <button class="toggle-btn" onclick="toggleTheme()">🌙 Dark/Light</button>
+
+  <header>
+    <h1>Prince Pal</h1>
+    <p>Aspiring Developer | Lifelong Learner | Open Source Enthusiast</p>
+  </header>
+
+  <section>
+    <h2>📜 Certifications</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>freeCodeCamp – Responsive Web Design</h3>
+        <p><a href="https://www.freecodecamp.org/certification/PrincePal-25/responsive-web-design" target="_blank">View Certificate</a></p>
+      </div>
+      <div class="card">
+        <h3>SoloLearn – JavaScript Basics</h3>
+        <p><a href="#" target="_blank">View Certificate</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>💻 Projects</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Portfolio Website</h3>
+        <p>A simple dark/light themed portfolio with animations.</p>
+        <a href="https://PrincePal-25.github.io" target="_blank">Live Demo</a>
+      </div>
+      <div class="card">
+        <h3>Calculator App</h3>
+        <p>Basic calculator made using JavaScript.</p>
+        <a href="https://github.com/PrincePal-25/calculator" target="_blank">Source Code</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Prince Pal | Built with ❤️ and GitHub Pages
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle("light");
+      const btn = document.querySelector(".toggle-btn");
+      if (document.body.classList.contains("light")) {
+        btn.textContent = "🌙 Dark Mode";
+      } else {
+        btn.textContent = "☀️ Light Mode";
+      }
+    }
+  </script>
+
+</body>
+</html>
